@@ -1,0 +1,110 @@
+<!--Waterpolo Score Board-->
+
+<style>
+    *{
+        margin:0;
+        text-align: center;
+    }
+    .left{
+        width:20vw;
+        height:100%;
+        background-color: aliceblue;
+        display: inline-block;
+        float:left;
+    }
+    
+    .right{
+        width:20vw;
+        height:100%;
+        background-color:aqua;
+        display: inline-block;
+        float:right; 
+    }
+    .center{
+        display: inline-block;
+    }
+    
+    .head{
+        font-size: 7vh;
+    }
+    .head td{
+        padding-left: 3vw; padding-right: 3vw;
+    }
+    
+    .lnumber{
+        font-size: 14vh;
+    }
+    
+</style>
+
+<div class="left">
+    <div class="logo"></div>
+    <table>
+        <tr><!--Heading-->
+            <td>Player</td>
+            <td>Foul</td>
+            <td>Score</td>
+        </tr>
+        <!--Start of Individual Players, ordered Player, Foul, Score-->
+        <tr><!--Start Player 1-->
+            <td>
+                <div class="number">1</div><!--Player Number-->
+                <div class="playeroi"></div><!--Player O/I Indicator-->            
+            </td><!--Player Number-->
+            <td><!--Start of Fouls-->
+                <div class="foul">
+                    <!--Maybe individual images?-->
+                </div><!--End Fouls-->
+            </td>
+            <td><!--Start Individual score-->
+                <span name="indScore">12</span>
+            </td><!--End Individual score-->
+        </tr><!--End Player 1-->
+    
+    </table>
+
+</div>
+
+<div class="center">
+    <table align="center"><!--Main scores-->
+        <tr class="head"><!--Heading-->
+            <td>Home</td>
+            <td>Period</td>
+            <td>Guest</td>
+        </tr>
+        <tr class="lnumber"><!--Scores/Numbers-->
+            <td>42</td><!--Home Score-->
+            <td>3</td><!--Period Number-->
+            <td>23</td><!--Guest Score-->
+        </tr>
+    </table><!--End Main scores-->
+    
+    <table align="center"><!--Times -->
+        <tr class="head"><!--Times/Time out-->
+            <td>
+                T-Out
+            </td>
+            
+            <td class="lnumber">12:30</td><!--Times-->
+            
+            <td>
+                T-Out
+            </td>
+        </tr>
+        <tr><!--Stuff-->
+            <td>
+                <!--Time out image indicator-->
+            </td>
+            <td></td><!--Clock, leave empty-->
+            <td>
+                <!--Time out image indicator-->
+            </td>
+        </tr>
+    </table><!--End Times-->
+    
+    
+</div>
+
+<div class="right">
+    
+</div>
