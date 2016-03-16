@@ -13,7 +13,7 @@ $(".submit").click(function() {
 //    var numberoi1 = $("#numberoi1").val();/*Player On or Off*/
     
     <?php
-					for($set=1;$set<3;$set++){
+					for($set=1;$set<4;$set++){
                         echo "
                         
     var numbern".$set." = $('#numbern".$set."').val();/*Player number
@@ -33,33 +33,27 @@ $(".submit").click(function() {
     
     /*var dataString = '&numbern1='+ numbern1 +'&numberNa1='+ numberNa1 + '&numberoi1=' + numberoi1 + '&numbers1=' + numbers1 +'&numberf1=' + numberf1;*/
     
-    var dataString =
-    <?php
-        for($string=1;$string<3;$string++){
-            echo "
-            '&numbern".$string."='+ numbern".$string." +'&numberNa".$string."='+ numberNa".$string." + '&numberoi".$string."=' + numberoi".$string." + '&numbers".$string."=' + numbers".$string." +'&numberf".$string."=' + numberf".$string." +
-            
-            
-            
-            
-            ";
+    var dataString =<?php
+        for($string=1;$string<4;$string++){
+            if($string<3){
+                 echo "'&numbern".$string."='+ numbern".$string." +'&numberNa".$string."='+ numberNa".$string." + '&numberoi".$string."=' + numberoi".$string." + '&numbers".$string."=' + numbers".$string." +'&numberf".$string."=' + numberf".$string." +";
+            }
+            else {echo "'&numbern".$string."='+ numbern".$string." +'&numberNa".$string."='+ numberNa".$string." + '&numberoi".$string."=' + numberoi".$string." + '&numbers".$string."=' + numbers".$string." +'&numberf".$string."=' + numberf".$string."";}
         }
         echo ";"
     ?>
     
     /*If there's nothing in the forms, display an error*/
     /*if(numberNa1=='' || numberoi1=='' || numbers1=='' || numbern1=='' || numberf1=='')*/
-    if(
-        <?php
-            for($if=1;$if<3;$if++){
-                echo"numberNa".$if."=='' || numberoi".$if."=='' || numbers".$if."=='' || numbern".$if."=='' || numberf".$if."==''";
+    if( <?php
+            for($if=1;$if<4;$if++){
+                if($if<3){
+                echo "numberNa".$if."=='' || numberoi".$if."=='' || numbers".$if."=='' || numbern".$if."=='' || numberf".$if."=='' || ";
+                }
+                else {echo "numberNa".$if."=='' || numberoi".$if."=='' || numbers".$if."=='' || numbern".$if."=='' || numberf".$if."==''";}
             }
         echo ")"
-        ?>
-    
-        
-        
-        {
+        ?> {
             $('.success').fadeOut(200).hide();
             $('.error').fadeOut(200).show();
         }
@@ -148,7 +142,7 @@ $(".submit").click(function() {
         <!--Start of Individual Players, ordered Player, Foul, Score-->
         
         <?php
-					for($row=1;$row<3;$row++){
+					for($row=1;$row<4;$row++){
                         echo "<tr class='player'>\n
                            <td>
                 <div class='number'>
